@@ -160,7 +160,7 @@ function App() {
         <div
             className="min-h-screen bg-cover bg-center bg-fixed"
             style={{
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('love.png')`,
+                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://res.cloudinary.com/dtzqzcc42/image/upload/v1743244282/love_xtxftk.png')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundAttachment: "fixed",
