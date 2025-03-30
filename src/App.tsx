@@ -54,9 +54,9 @@ function App() {
                                     time: "18 April 7:30 PM",
                                     event: "Dinner",
                                 },
-                                { time: "18 April 9:30 PM", event: "Wedding" },
+                                { time: "18 April 8:34 PM", event: "Wedding" },
                                 {
-                                    time: "20 April 11:00 AM",
+                                    time: "18 April 10:00 PM",
                                     event: "Reception",
                                 },
                             ].map((item, index) => (
@@ -92,7 +92,7 @@ function App() {
 
             case "venue":
                 return (
-                    <div className="h-screen flex flex-col justify-center items-center text-center animate-fade-in mx-auto">
+                    <div className="flex flex-col justify-center items-center text-center animate-fade-in mx-auto">
                         <h2 className="text-4xl md:text-5xl font-heading text-white mb-8 animate-slide-up">
                             The Venue
                         </h2>
@@ -120,7 +120,7 @@ function App() {
                                 love.
                             </p>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="">
                                 <div
                                     className="glass-card p-4 md:p-6 text-left bg-white bg-opacity-10 rounded-lg shadow-md animate-slide-left"
                                     style={{ animationDelay: "0.6s" }}
@@ -131,24 +131,12 @@ function App() {
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.0915505230028!2d81.41611917560058!3d16.722283221623734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3636056413d1d3%3A0xf3ec43d00f1d25de!2sBala%20Venkateswara%20Swamy%20Temple!5e0!3m2!1sen!2sin!4v1743239919242!5m2!1sen!2sin"
                                         width="100%"
-                                        height="150"
+                                        height="100"
                                         loading="lazy"
                                         className="rounded-lg"
                                     ></iframe>
                                 </div>
-                                <div
-                                    className="glass-card p-4 md:p-6 text-left bg-white bg-opacity-10 rounded-lg shadow-md animate-slide-left"
-                                    style={{ animationDelay: "0.5s" }}
-                                >
-                                    <h4 className="text-lg md:text-xl font-heading text-primary-200 mb-2">
-                                        Reception
-                                    </h4>
-                                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                                        At our home in Nidamarru, Andhra
-                                        Pradesh. Enjoy a warm and joyous evening
-                                        with family and friends.
-                                    </p>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -160,10 +148,13 @@ function App() {
         <div
             className="min-h-screen bg-cover bg-center bg-fixed"
             style={{
+                display: 'flex',
+                flexDirection: 'column',
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://res.cloudinary.com/dtzqzcc42/image/upload/v1743244282/love_xtxftk.png')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundAttachment: "fixed",
+                height: document.body.offsetHeight + 'px'
             }}
         >
             <div className="min-h-screen flex flex-col items-center justify-start text-white px-4 py-8">
