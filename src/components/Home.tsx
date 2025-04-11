@@ -1,8 +1,9 @@
 import { Calendar, Clock, Heart } from "lucide-react";
 import heartImageSrc from "../assets/images/heart.png";
+import { Tab } from "../App";
 
 interface HomeProps {
-    setActiveTab: (tab: string) => void;
+    setActiveTab: (tab: Tab) => void;
 }
 
 const Home = ({ setActiveTab }: HomeProps) => {

@@ -5,7 +5,7 @@ import Schedule from "./components/Schedule";
 import Venue from "./components/Venue";
 import bgImageSrc from "./assets/images/love.png";
 
-type Tab = "home" | "schedule" | "venue";
+export type Tab = "home" | "schedule" | "venue";
 
 function App() {
     const [activeTab, setActiveTab] = useState<Tab>("home");
