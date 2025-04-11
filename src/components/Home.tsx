@@ -1,5 +1,5 @@
 import { Calendar, Clock, Heart } from "lucide-react";
-import heartImageSrc from "../assets/images/heart.png";
+import heartImageSrc from "../assets/images/love-gif.gif";
 import { Tab } from "../App";
 
 interface HomeProps {
@@ -17,7 +17,7 @@ const Home = ({ setActiveTab }: HomeProps) => {
                 <img
                     src={heartImageSrc}
                     alt="Heart"
-                    className="inline-block w-20 h-20 animate-bounce"
+                    className="inline-block w-20 h-20"
                 />{" "}
                 Saranya
             </h1>
