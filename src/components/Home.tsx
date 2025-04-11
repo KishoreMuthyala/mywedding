@@ -12,7 +12,7 @@ const Home = ({ setActiveTab }: HomeProps) => {
             <p className="text-2xl font-heading text-white mb-6">
                 We cordially invite you to celebrate the union of
             </p>
-            <h1 className="text-6xl md:text-7xl font-cursive text-gold mb-6 animate-slide-up">
+            <h1 className="text-4xl md:text-7xl font-cursive text-gold mb-6 animate-slide-up">
                 Kishore{" "}
                 <img
                     src={heartImageSrc}
