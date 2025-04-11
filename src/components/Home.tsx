@@ -1,7 +1,11 @@
 import { Calendar, Clock, Heart } from "lucide-react";
 import heartImageSrc from "../assets/images/heart.png";
 
-const Home = ({ setActiveTab }) => {
+interface HomeProps {
+    setActiveTab: (tab: string) => void;
+}
+
+const Home = ({ setActiveTab }: HomeProps) => {
     return (
         <div className="relative z-10 text-center max-w-3xl mx-auto animate-fade-in">
             <p className="text-2xl font-heading text-white mb-6">
