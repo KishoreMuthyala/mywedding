@@ -31,10 +31,9 @@ function App() {
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundAttachment: "fixed",
-                height: document.body.offsetHeight + "px",
             }}
         >
-            <div className="min-h-screen flex flex-col items-center justify-start text-white px-4 py-8">
+            <div className="min-h-screen flex flex-col items-center justify-start text-white px-4 py-8 mt-[80px]">
                 <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-cyan-400 via-primary-400 to-cyan-400 backdrop-blur-md z-50 shadow-lg">
                     <div className="max-w-5xl mx-auto px-6">
                         <div className="flex justify-center space-x-8 py-4">
@@ -74,10 +73,7 @@ function App() {
                     </div>
                 </nav>
 
-                <div
-                    style={{ height: "calc(100vh - 192px)" }}
-                    className="mt-32 w-full flex items-center"
-                >
+                <div className="w-full flex items-center justify-center mt-[80px]">
                     {renderContent()}
                 </div>
             </div>
