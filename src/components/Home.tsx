@@ -51,7 +51,7 @@ const Home = ({ setActiveTab }: HomeProps) => {
                 <img
                     src={heartImageSrc}
                     alt="Heart"
-                    className="inline-block w-20 h-20"
+                    className="inline-block w-14 h-14 md:w-20 md:h-20"
                 />{" "}
                 Saranya
             </h1>

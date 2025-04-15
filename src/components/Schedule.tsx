@@ -10,8 +10,12 @@ const Schedule = () => {
                         event: "Haldi Ceremony",
                     },
                     {
-                        time: "18 April 7:30 PM",
-                        event: "Dinner",
+                        time: "18 April 11:00 AM",
+                        event: "Lunch at Groom's House",
+                    },
+                    {
+                        time: "18 April 7:00 PM",
+                        event: "Dinner at Sri Bala Venkateswara Swamy Temple",
                     },
                     { time: "18 April 8:34 PM", event: "Wedding" },
                 ].map((item, index) => (
