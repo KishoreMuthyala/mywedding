@@ -3,12 +3,30 @@ import { MapPin, Home as HomeIcon, Clock3 } from "lucide-react";
 import Home from "./components/Home";
 import Schedule from "./components/Schedule";
 import Venue from "./components/Venue";
-import bgImageSrc from "./assets/images/love.png";
+import bgImage1 from "./assets/images/image1.png";
+import bgImage2 from "./assets/images/image2.png";
+import bgImage3 from "./assets/images/image3.png";
+import bgImage4 from "./assets/images/image4.png";
 
 export type Tab = "home" | "schedule" | "venue";
 
 function App() {
     const [activeTab, setActiveTab] = useState<Tab>("home");
+    const [currentBgImage, setCurrentBgImage] = useState<string>(bgImage1);
+
+    // Array of background images
+    const bgImages = [bgImage1, bgImage2, bgImage3, bgImage4];
+
+    // Change background image every 5 seconds
+    useEffect(() => {
+        let index = 0;
+        const interval = setInterval(() => {
+            index = (index + 1) % bgImages.length;
+            setCurrentBgImage(bgImages[index]);
+        }, 3000);
+
+        return () => clearInterval(interval); // Cleanup interval on component unmount
+    }, []);
 
     const renderContent = () => {
         switch (activeTab) {
@@ -22,18 +40,8 @@ function App() {
     };
 
     return (
-        <div
-            className="min-h-screen bg-cover bg-center bg-fixed"
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(${bgImageSrc})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundAttachment: "fixed",
-            }}
-        >
-            <div className="min-h-screen flex flex-col items-center justify-start text-white px-4 py-8">
+        <div className="min-h-screen bg-cover bg-center">
+            <div className="min-h-screen flex flex-col items-center justify-start text-white">
                 <nav className="fixed top-0 left-0 right-0 bg-gradient-to-r from-cyan-400 via-primary-400 to-cyan-400 backdrop-blur-md z-50 shadow-lg">
                     <div className="max-w-5xl mx-auto px-6">
                         <div className="flex justify-center space-x-8 py-4">
@@ -74,8 +82,17 @@ function App() {
                 </nav>
 
                 <div
-                    style={{ minHeight: "calc(100vh - 80px)" }}
-                    className="w-full flex items-center justify-center pt-[80px]"
+                    style={{
+                        minHeight: "100vh",
+                        display: "flex",
+                        flexDirection: "column",
+                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${currentBgImage})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "top center",
+                        backgroundAttachment: "fixed",
+                        color: "white",
+                    }}
+                    className="w-full flex items-center justify-center bg-fixed transition-all duration-1000 ease-in-out px-4 py-8"
                 >
                     {renderContent()}
                 </div>

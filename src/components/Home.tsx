@@ -42,8 +42,8 @@ const Home = ({ setActiveTab }: HomeProps) => {
     }, []);
 
     return (
-        <div className="relative z-10 text-center max-w-3xl mx-auto animate-fade-in">
-            <p className="text-2xl font-heading text-white mb-6">
+        <div className="z-10 text-center max-w-3xl mx-auto animate-fade-in mt-12">
+            <p className="text-2xl font-heading mb-6">
                 We cordially invite you to celebrate the union of
             </p>
             <h1 className="text-4xl md:text-7xl font-cursive text-gold mb-6 animate-slide-up">
