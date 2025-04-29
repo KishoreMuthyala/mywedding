@@ -14,19 +14,42 @@ function App() {
     const [activeTab, setActiveTab] = useState<Tab>("home");
     const [currentBgImage, setCurrentBgImage] = useState<string>(bgImage1);
 
+    const [loading, setLoading] = useState<boolean>(true);
+
     // Array of background images
     const bgImages = [bgImage1, bgImage2, bgImage3, bgImage4];
 
-    // Change background image every 5 seconds
+    // Preload all images
     useEffect(() => {
-        let index = 0;
-        const interval = setInterval(() => {
-            index = (index + 1) % bgImages.length;
-            setCurrentBgImage(bgImages[index]);
-        }, 3000);
+        const preloadImages = async () => {
+            const promises = bgImages.map((src) => {
+                return new Promise<void>((resolve) => {
+                    const img = new Image();
+                    img.src = src;
+                    img.onload = () => resolve();
+                });
+            });
+
+            await Promise.all(promises);
+            setLoading(false); // Set loading to false after all images are loaded
+        };
+
+        preloadImages();
+    }, []);
+
+    // Change background image every 5 seconds
+    let interval: number | undefined;
+    useEffect(() => {
+        if (!loading) {
+            let index = 0;
+            interval = setInterval(() => {
+                index = (index + 1) % bgImages.length;
+                setCurrentBgImage(bgImages[index]);
+            }, 3000);
+        }
 
         return () => clearInterval(interval); // Cleanup interval on component unmount
-    }, []);
+    }, [loading]);
 
     const renderContent = () => {
         switch (activeTab) {
@@ -38,6 +61,14 @@ function App() {
                 return <Venue />;
         }
     };
+
+    if (loading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+                <p>Loading...</p>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-cover bg-center">
