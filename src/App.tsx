@@ -64,8 +64,11 @@ function App() {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
-                <p>Loading...</p>
+            <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-r from-cyan-400 via-primary-400 to-cyan-400 text-white">
+                <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-white border-opacity-50 mb-4"></div>
+                <p className="text-xl font-semibold tracking-wide">
+                    Loading...
+                </p>
             </div>
         );
     }
